@@ -15,11 +15,11 @@ export namespace MySql {
     // Squel wrapper
     export let QueryBuilder: QueryBuilder = squel.useFlavour('mysql');
 
-    export function executeParameterizedStatment(conn: IPromisifiedConnection, params: { text: string, values: any[] }): Promise<mysql.IQuery> {
+    export function executeParameterizedStatement(conn: IPromisifiedConnection, params: { text: string, values: any[] }): Promise<mysql.IQuery> {
         return conn.query(params.text, params.values);
     }
 	
-	export function executeStatement(conn: IPromisifiedConnection, queryBuilder: SqlSelect | SqlInsert | SqlUpdate | SqlDelete) {
-		executeParameterizedStatment(conn, (queryBuilder as any).toParam());
-	}
+    export function executeStatement(conn: IPromisifiedConnection, queryBuilder: SqlSelect | SqlInsert | SqlUpdate | SqlDelete) {
+	    executeParameterizedStatement(conn, (queryBuilder as any).toParam());
+    }
 }
