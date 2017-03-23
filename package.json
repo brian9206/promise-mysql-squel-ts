@@ -1,10 +1,13 @@
 {
   "name": "promise-mysql-squel-ts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "TypeScript wrapper of promise-mysql and squel in one module",
   "author": "Brian Choi",
   "license": "MIT",
   "devDependencies": {
+    "@types/mysql": "^0.0.31",
+    "@types/promise-mysql": "git+https://github.com/brian9206/ts-promise-mysql.git",
+    "@types/squel": "git+https://github.com/warrenseymour/squel.d.ts.git",
     "ts-node": "^3.0.2",
     "typescript": "^2.2.1"
   },
