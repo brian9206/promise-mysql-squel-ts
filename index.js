@@ -15,8 +15,12 @@ var MySql;
     MySql.createPool = createPool;
     // Squel wrapper
     MySql.QueryBuilder = squel.useFlavour('mysql');
-    function executeQueryBuilder(conn, params) {
+    function executeParameterizedStatement(conn, params) {
         return conn.query(params.text, params.values);
     }
-    MySql.executeQueryBuilder = executeQueryBuilder;
+    MySql.executeParameterizedStatement = executeParameterizedStatement;
+    function executeStatement(conn, queryBuilder) {
+        return executeParameterizedStatement(conn, queryBuilder.toParam());
+    }
+    MySql.executeStatement = executeStatement;
 })(MySql = exports.MySql || (exports.MySql = {}));
