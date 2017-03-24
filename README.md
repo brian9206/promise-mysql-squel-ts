@@ -20,10 +20,9 @@ let conn = MySql.createConnection({
 
 let query = MySql.QueryBuilder
     .select()
-    .from("sometable")
-    .toParam();
+    .from("sometable");
 
-let results = await MySql.executeQueryBuilder(conn, query);
+let results = await MySql.executeStatement(conn, query);
 
 console.log(results);
 ```
