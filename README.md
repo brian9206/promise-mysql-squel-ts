@@ -3,6 +3,7 @@ TypeScript wrapper of promise-mysql and squel in one module
 
 # TypeScript definition
 ```
+npm install --save-dev @types/mysql
 npm install --save-dev https://github.com/brian9206/ts-promise-mysql.git
 npm install --save-dev https://github.com/warrenseymour/squel.d.ts.git
 ```
