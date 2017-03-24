@@ -20,6 +20,6 @@ export namespace MySql {
     }
 	
     export function executeStatement(conn: IPromisifiedConnection, queryBuilder: SqlSelect | SqlInsert | SqlUpdate | SqlDelete) {
-	    executeParameterizedStatement(conn, (queryBuilder as any).toParam());
+	    return executeParameterizedStatement(conn, (queryBuilder as any).toParam());
     }
 }
