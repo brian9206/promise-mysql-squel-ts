@@ -15,7 +15,7 @@ export namespace MySql {
     // Squel wrapper
     export let QueryBuilder: QueryBuilder = squel.useFlavour('mysql');
 
-    export function executeParameterizedStatement(conn: promiseMysql.IConnection, params: { text: string, values: any[] }): Promise<any[]> {
+    export function executeParameterizedStatement(conn: promiseMysql.IConnection, params: { text: string, values: any[] }): Promise<any> {
         return conn.query(params.text, params.values);
     }
 	
